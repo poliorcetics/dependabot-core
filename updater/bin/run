@@ -13,4 +13,8 @@ export HEX_CACERTS_PATH=/etc/ssl/certs/ca-certificates.crt
 # Tell python to use the system-wide CA bundle
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
+if [[ "$2" == *"debug"* ]]; then
+  export DEBUG=1
+fi
+
 bundle exec ruby "bin/${command}.rb"
